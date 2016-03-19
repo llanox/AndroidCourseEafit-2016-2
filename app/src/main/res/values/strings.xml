@@ -4,5 +4,6 @@
     <string name="hint_password"> Enter your credentials </string>
     <string name="lb_btn_login">LogIn</string>
     <string name="lb_btn_sign_up">Sign Up</string>
+    <string name="err_msg_empty_fields">Empty Fields!! Please enter valid data</string>
 
 </resources>

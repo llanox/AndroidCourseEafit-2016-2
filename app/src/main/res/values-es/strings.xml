@@ -3,5 +3,6 @@
     <string name="hint_username"> Ingrese su correo electronico </string>
     <string name="hint_password"> Digite el password </string>
     <string name="lb_btn_login">LogIn</string>
+    <string name="err_msg_empty_fields">Campos vacios!!. Por favor ingrese datos validos</string>
 
 </resources>

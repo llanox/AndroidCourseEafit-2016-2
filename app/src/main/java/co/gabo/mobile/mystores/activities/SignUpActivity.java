@@ -1,7 +1,9 @@
-package co.gabo.mobile.mystores;
+package co.gabo.mobile.mystores.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import co.gabo.mobile.mystores.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
