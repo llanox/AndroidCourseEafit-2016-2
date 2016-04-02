@@ -37,7 +37,7 @@ public class StoreDataImpl extends DBAdapter implements StoreData {
         return stores;
     }
 
-    public long insert(Store store)
+    public void insert(Store store)
     {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_NAME, store.getName());
@@ -46,7 +46,7 @@ public class StoreDataImpl extends DBAdapter implements StoreData {
         initialValues.put(KEY_LOCATION, store.getLocation());
         initialValues.put(KEY_CITY,store.getCity());
 
-        return db.insertOrThrow(DATABASE_TABLE, null, initialValues);
+        db.insertOrThrow(DATABASE_TABLE, null, initialValues);
     }
 
     @Override

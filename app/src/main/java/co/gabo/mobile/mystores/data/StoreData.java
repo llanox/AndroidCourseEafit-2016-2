@@ -30,4 +30,6 @@ public interface StoreData {
 
 
     DBAdapter open();
+
+    void insert(Store store);
 }
