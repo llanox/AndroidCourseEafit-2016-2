@@ -9,6 +9,17 @@ public class Store {
     private String address;
     private String owner;
     private String location;
+    private String city;
+
+
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
 
     public String getName() {

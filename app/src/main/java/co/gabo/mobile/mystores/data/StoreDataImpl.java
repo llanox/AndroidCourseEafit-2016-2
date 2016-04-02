@@ -15,6 +15,8 @@ import co.gabo.mobile.mystores.model.Store;
 public class StoreDataImpl extends DBAdapter implements StoreData {
 
 
+
+
     public StoreDataImpl(Context ctx) {
         super(ctx);
     }
@@ -42,8 +44,9 @@ public class StoreDataImpl extends DBAdapter implements StoreData {
         initialValues.put(KEY_ADDRESS, store.getAddress());
         initialValues.put(KEY_OWNER, store.getOwner());
         initialValues.put(KEY_LOCATION, store.getLocation());
+        initialValues.put(KEY_CITY,store.getCity());
 
-        return db.insert(DATABASE_TABLE, null, initialValues);
+        return db.insertOrThrow(DATABASE_TABLE, null, initialValues);
     }
 
     @Override

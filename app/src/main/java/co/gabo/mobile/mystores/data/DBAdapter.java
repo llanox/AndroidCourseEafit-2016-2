@@ -10,7 +10,8 @@ public class DBAdapter {
     private static final String TAG = DBAdapter.class.getSimpleName();    
 
     static final String DATABASE_NAME = "StoresDB";
-    static final int DATABASE_VERSION = 1;
+    static final int DATABASE_VERSION = 2; //Se debe subir la version para que
+                                           // se ejecute el onUpgrade
     
     static final String DATABASE_CREATE = StoreData.CREATE_TABLE;
     

@@ -15,6 +15,7 @@ public interface StoreData {
     String KEY_ADDRESS = "address";
     String KEY_OWNER = "owner";
     String KEY_LOCATION = "location";
+    String KEY_CITY = "city" ;
 
     String CREATE_TABLE =
             "create table "+StoreData.DATABASE_TABLE+" "+
@@ -22,6 +23,7 @@ public interface StoreData {
                     + ""+StoreData.KEY_NAME+" text not null, "
                     +StoreData.KEY_ADDRESS+" text not null," +
                     ""+StoreData.KEY_OWNER+" text not null," +
+                    ""+StoreData.KEY_CITY+" text not null," +
                     ""+StoreData.KEY_LOCATION+" text not null );";
 
     List<Store> findAll();

@@ -22,7 +22,7 @@ public class StoreListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_list);
+        setContentView(R.layout.activity_stores);
 
         mListView = (ListView)this.findViewById(R.id.list);
         mStoreData = new StoreDataImpl(this);
