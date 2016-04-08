@@ -25,6 +25,9 @@ public class StoreListActivity extends AppCompatActivity {
     private ArrayAdapter<Store> mStoreArrayAdapter;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +66,10 @@ public class StoreListActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-
-
-
-
+        List<Store> stores = mStoreData.findAll();
+        mStoreArrayAdapter.clear();
+        mStoreArrayAdapter.addAll(stores);
+        mStoreArrayAdapter.notifyDataSetChanged();
 
     }
 }

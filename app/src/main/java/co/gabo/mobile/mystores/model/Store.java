@@ -1,9 +1,11 @@
 package co.gabo.mobile.mystores.model;
 
+import java.io.Serializable;
+
 /**
  * Created by juangabrielgutierrez on 4/1/16.
  */
-public class Store {
+public class Store implements Serializable{
 
     private String name;
     private String address;

@@ -2,6 +2,7 @@ package co.gabo.mobile.mystores.data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 
 import java.util.ArrayList;
@@ -26,13 +27,23 @@ public class StoreDataImpl extends DBAdapter implements StoreData {
 
         List<Store> stores = new ArrayList<Store>();
 
-        Store store = new Store();
-        store.setName("Pollos Mario");
-        store.setOwner("Julio Mario Santo Domingo");
-        store.setAddress("Calle 8 36 68 Barrio Poblado");
+        Store store = null;
+        Cursor c = db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME, KEY_ADDRESS,KEY_CITY,KEY_OWNER,KEY_LOCATION}, null, null, null, null, null);
 
-        stores.add(store);
+        if (c.moveToFirst())
+        {
+            do {
 
+                store = new Store();
+               // store.setId(c.getLong(c.getColumnIndex(KEY_ROWID)));
+                store.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+                store.setAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+                store.setOwner(c.getString(c.getColumnIndex(KEY_OWNER)));
+                store.setLocation(c.getString(c.getColumnIndex(KEY_LOCATION)));
+                stores.add(store);
+
+            } while (c.moveToNext());
+        }
 
         return stores;
     }

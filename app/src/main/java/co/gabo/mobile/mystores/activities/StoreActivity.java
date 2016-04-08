@@ -1,5 +1,6 @@
 package co.gabo.mobile.mystores.activities;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import co.gabo.mobile.mystores.R;
+import co.gabo.mobile.mystores.WeatherActivity;
 import co.gabo.mobile.mystores.data.StoreData;
 import co.gabo.mobile.mystores.data.StoreDataImpl;
 import co.gabo.mobile.mystores.model.Store;
@@ -24,6 +26,7 @@ public class StoreActivity extends AppCompatActivity {
         mStoreData.open();
 
     }
+
 
 
     public void save(View view){
@@ -51,7 +54,22 @@ public class StoreActivity extends AppCompatActivity {
 
         mStoreData.insert(store);
 
+
+        Intent intent = new Intent(this, WeatherActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("store", store);
+
+        intent.putExtras(bundle);
+        this.startActivity(intent);
         this.finish();
+
+       // bundle.putString("store_name",store.getName());
+
+
+
+
+
+
     }
 
 }
