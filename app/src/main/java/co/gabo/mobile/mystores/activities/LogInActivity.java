@@ -13,7 +13,7 @@ import co.gabo.mobile.mystores.util.Authentication;
 import co.gabo.mobile.mystores.util.AuthenticationImpl;
 import co.gabo.mobile.mystores.util.UIUtil;
 
-public class MainActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     private Authentication authentication;
 
@@ -21,6 +21,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //En favor de la mantenibilidad de una aplicación
+        // ud deberia programar a interfaces. En este caso podriamos
+        // crear una implementación para cada tiempo de autenticación
+        // pero entonces recuerde que a mayor número de clases en la app
+        // se va tener la posibilidad de alcanzar el limite de numero de metodos
+        // permitido para apps, que en este momento es de 65K
+
+        // También se puede usar tecnicas o procesos cuando se este compilando
+        // para optimizar el codigo. Como Obfuscation and Shrink usando ProGuard, estos nos
+        // permite eliminar el codigo que no necesitamos y además protegerlo contra
+        // gente que quiere decompilar nuestras aplicaciones.
+
+
 
         authentication = new AuthenticationImpl(this);
 

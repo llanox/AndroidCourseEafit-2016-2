@@ -39,6 +39,7 @@ public class StoreDataImpl extends DBAdapter implements StoreData {
                 store.setName(c.getString(c.getColumnIndex(KEY_NAME)));
                 store.setAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
                 store.setOwner(c.getString(c.getColumnIndex(KEY_OWNER)));
+                store.setCity(c.getString(c.getColumnIndex(KEY_CITY)));
                 store.setLocation(c.getString(c.getColumnIndex(KEY_LOCATION)));
                 stores.add(store);
 

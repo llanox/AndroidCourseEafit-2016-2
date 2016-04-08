@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--En este tipo de archivos de recursos podemos agregar API key para cada uno de los ambientes-->
+    <!--en los que corra nuestra aplicacion. Algunas de estos API key no deberian ser agregados al repositorio-->
+    <string name="api_key_openweather">48cfb2533b9e58cf3755979cb33fca74</string>
+    <string name="unit_metric_celsius">metric</string>
+</resources>

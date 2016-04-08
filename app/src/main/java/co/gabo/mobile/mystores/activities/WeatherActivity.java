@@ -1,4 +1,4 @@
-package co.gabo.mobile.mystores;
+package co.gabo.mobile.mystores.activities;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +17,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import co.gabo.mobile.mystores.R;
 import co.gabo.mobile.mystores.model.Store;
+import co.gabo.mobile.mystores.util.Constants;
 
 public class WeatherActivity extends AppCompatActivity {
 
-    private static final String URL_QUERY="http://api.openweathermap.org/data/2.5/weather?q=%s";
     private Store mStore;
 
     @Override
@@ -33,11 +34,9 @@ public class WeatherActivity extends AppCompatActivity {
         if(this.getIntent()!=null){
 
             Bundle bundle = this.getIntent().getExtras();
-
             mStore = (Store) bundle.getSerializable("store");
-
             DownloadData downloadData = new DownloadData();
-          //  downloadData.execute(mStore.getCity());
+            downloadData.execute(mStore.getCity());
 
         }
 
@@ -51,7 +50,11 @@ public class WeatherActivity extends AppCompatActivity {
         String temp =null;
         try {
 
-            String query = String.format(URL_QUERY, URLEncoder.encode(ciudad, "utf-8"));
+
+            String query = String.format(Constants.WEATHER_BY_CITY_PATH,
+                            URLEncoder.encode(ciudad, "utf-8"),
+                            this.getString(R.string.unit_metric_celsius),
+                            this.getString(R.string.api_key_openweather));
 
             //set the download URL, a url that points to a file on the internet
             //this is the file to be downloaded
@@ -136,7 +139,7 @@ public class WeatherActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             TextView temperature = (TextView) WeatherActivity.this.findViewById(R.id.id_store_temperature);
-            temperature.setText(result+"Kº Es la temperatura actual");
+            temperature.setText(result+" Cº Es la temperatura actual");
         }
 
 

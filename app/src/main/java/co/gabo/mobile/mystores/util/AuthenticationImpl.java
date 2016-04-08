@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import co.gabo.mobile.mystores.activities.MainActivity;
-
 /**
  * Created by juangabrielgutierrez on 3/18/16.
  */

@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.gabo.mobile.mystores">
 
+    <!--Este permiso es obligatorio para que la aplicación pueda hacer peticiones a internet-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +22,8 @@
         <activity
             android:name=".activities.StoreListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.StoreActivity" />
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".activities.StoreRegistrationActivity" />
+        <activity android:name=".activities.WeatherActivity"></activity>
     </application>
 
 </manifest>
